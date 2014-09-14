@@ -1,0 +1,44 @@
+@import "compass";
+@import "variables";
+@import "mixins";
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic&subset=latin,cyrillic);
+
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
+html {
+    font-family: $base-font;
+    font-size: $base-fz;
+    line-height: $base-lh;
+    color: $text-c;
+}
+
+
+input, select, textarea, button {
+    &:focus {
+        outline: none;
+    }
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.no-hover {
+    -ms-pointer-events: none;
+    -moz-pointer-events: none;
+    -webkit-pointer-events: none;
+    pointer-events: none;
+}
+
+
