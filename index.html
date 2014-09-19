@@ -3,21 +3,32 @@
 <head>
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Dzmitry Navitski - frontend developer from Belarus</title>
-    <meta name="description" content="Dzmitry Navitski - frontend developer from Belarus">
+    <title>Dzmitry Navitski - frontend developer</title>
+    <meta name="description" content="Dzmitry Navitski - frontend developer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script>
+        // Picture element HTML shim|v it for old IE (pairs with Picturefill.js)
+        document.createElement( "picture" );
+    </script>
+    <script src="js/picturefill.min.js"></script>
 </head>
 <body>
     <header class="header">
-    <img class="header-bg" src="img/img-2-2.jpg" alt="">
-        <!-- <div class="avatar">
+    <picture>
+        <!--[if IE 9]><video style="display: none;"><![endif]-->
+        <source srcset="img/img-2-2.jpg" media="(min-width: 1440px)">
+        <source srcset="img/img-2-2-desc.jpg" media="(min-width: 1280px)">
+        <source srcset="img/img-2-2-tab.jpg" media="(min-width: 768px)">
+        <!--[if IE 9]></video><![endif]-->
+        <img class="header-bg" srcset="img/img-2-2-mob.jpg" alt="">
+    </picture>
+        <div class="avatar">
             <img src="img/img-1.jpg" alt="">
-        </div> -->
+        </div>
         <div class="header-text">
-            <!-- <h1 class="header-title">dzmitry navitski <span>&#60;frontend developer/&#62;</span></h1>
-            <p class="slogan"><span>Seuls les fous nous ont fait avancer...</span> <br> [Mozart l’Opéra Rock , Penser L'Impossible]</p> -->
+            <h1 class="header-title">dzmitry navitski <br> <span>frontend developer</span></h1>
             <div class="text-container">
                 <p class="vertiacal-text"><!-- --></p>
                 <p class="horizontal-text"><!-- --></p>
@@ -25,26 +36,6 @@
         </div>
         <a href="#portfolio" class="down-arrow">Something interesting below</a>
     </header>
-    <!-- <section id="skills" class="skill-section">
-        <div class="skill-block">
-            <h2 class="skills-title">Some info about my skills</h2>
-            <div class="skills-wrap">
-                <div class="skill skill--js">
-                    <canvas id="jsCanvas" class="skill-diagram"></canvas>
-                    <p class="skill__text skill__text--js"><span>JS</span></p>
-                </div>
-                <div class="skill skill--css">
-                    <canvas id="cssCanvas" class="skill-diagram"></canvas>
-                    <p class="skill__text skill__text--css"><span>CSS</span></p>
-                </div>
-                <div class="skill skill--html">
-                    <canvas id="htmlCanvas" class="skill-diagram"></canvas>
-                    <p class="skill__text skill__text--html"><span>HTML</span></p>
-                </div>
-            </div>
-        </div>
-        <a href="#portfolio" class="down-arrow">Portfolio</a>
-    </section> -->
     <section id="portfolio" class="portfolio-section">
         <h2 class="portfolio-title">My work (html + css + js)</h2>
         <a href="http://www.oka.by" class="portfolio-item portfolio-item--two-two" style="background: #fff;" target="balnk">
@@ -159,7 +150,7 @@
     <section id="contacts" class="contacts-section">
         <h2 class="form-title">Contacts</h2>
         <div class="contact-form">
-            <form>
+            <form action="//forms.brace.io/dzmitry.navitski@gmail.com">
                 <label class="contact-form__label" for="name-input">Name</label>
                 <input id="name-input" class="contact-form__input" type="text" name="name" required placeholder="Whats's your name?">
                 <label class="contact-form__label" for="email-input">Email</label>

@@ -14,6 +14,7 @@ header {
     position: relative;
     min-height: 100%;
     height: auto;
+    text-align: center;
     background: #fff;
     overflow: hidden;
     @include user-select(none);
@@ -30,20 +31,25 @@ header {
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    float: left;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    -webkit-transform:rotate(358deg);
-    z-index: 2;
+    display: none;
 
-    img {
-        width: 100%;
-        height: 100%;
+    @include bp(mob) {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 60px 0 0 0;
+        border: 3px solid #fff;
         border-radius: 50%;
-    }
+        overflow: hidden;
+        @include transform(rotate(358deg));
+        z-index: 2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    } 
 }
 
 .header-text {
@@ -54,18 +60,27 @@ header {
     height: 100%;
     padding: 2rem;
     z-index: 2;
+
+    @include bp(mob) {
+        position: relative;
+    }
 }
 
 .header-title {
-    margin: 0;
-    font-size: 32px;
-    font-weight: 700;
-    color: #000;
-    text-transform: uppercase;
+    display: none;
 
-    span {
-        font-weight: 400;
-        text-transform: none;
+    @include bp(mob) {
+        display: block;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: #000;
+        text-transform: uppercase;
+
+        span {
+            font-weight: 400;
+            text-transform: none;
+        }
     }
 }
 
@@ -79,23 +94,38 @@ header {
     position: absolute;
     top: 0;
     left: 1%;
+    display: none;
     height: 100%;
     width: 50%;
     margin: 0;
-    background: url(../img/vertical.png) 0 0 no-repeat;
-    @include background-size(contain);
     z-index: 50;
+
+    @include bp(tab-min) {
+        display: block;
+        background: url(../img/vertical.png) 0 0 no-repeat;
+        @include background-size(contain);
+    }
 }
 
 .horizontal-text {
     position: absolute;
     left: 7%;
+    display: none;
     width: 40%;
     height: 100%;
     margin: 0;
-    font-family: 'Mohave-Bold';
-    background: url(../img/horizontal.png) 0 0 no-repeat;
-    @include background-size(contain);
+    
+
+    @include bp(tab) {
+        left: 15%;
+        width: 70%;
+    }
+
+    @include bp(tab-min) {
+        display: block;
+        background: url(../img/horizontal.png) 0 0 no-repeat;
+        @include background-size(contain);
+    }
 }
 
 .slogan {
@@ -263,6 +293,11 @@ header {
     color: #fff;
     text-align: center;
     background: #333;
+
+    @include bp(mob) {
+        padding: 15px 0;
+        font-size: 18px;
+    }
 }
 
 .portfolio-item {
@@ -287,15 +322,11 @@ header {
         top: 50%;
         max-width: 90%;
         max-height: 90%;
-        -webkit-transform: translate(0,-50%);
-        -ms-transform: translate(0,-50%);
-        transform: translate(0,-50%);
+        @include transform(translate(0, -50%));
 
         @include m(center) {
             left: 50%;
-            -webkit-transform: translate(-50%,-50%);
-            -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
+            @include transform(translate(-50%, -50%));
         }
     }
 
@@ -358,6 +389,50 @@ header {
         line-height: 1em;
         text-transform: uppercase;
     }
+
+    @include bp(tab) {
+        width: 50%;
+
+        @include m(two-two) {
+            width: 50%;
+
+            span {
+                padding-bottom: 100%;
+            }
+        }
+
+        @include e(img) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 90%;
+            max-height: 90%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+
+    @include bp(mob) {
+        width: 100%;
+
+        @include m(two-two) {
+            width: 100%;
+
+            span {
+                padding-bottom: 100%;
+            }
+        }
+
+        @include e(img) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 90%;
+            max-height: 90%;
+            left: 50%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
 }
 
 .portfolio-overlay {
@@ -368,6 +443,12 @@ header {
     text-align: center;
     background: #fff;
     z-index: 3;
+
+    @include bp(tab) {
+        @include out(has-touch) {
+            display: none !important;
+        }
+    }
 }
 
 .portfolio-overlay-inner {
@@ -438,6 +519,20 @@ header {
             background: #000;
         }
     }
+
+    @include bp(mob) {
+        width: 100%;
+        padding: 0 20px;
+        margin: 30px auto 30px;
+
+        @include e(input) {
+            height: 35px;
+        }
+
+        @include e(textarea) {
+            height: 125px;
+        }
+    }
 }
 
 .form-title {
@@ -447,6 +542,11 @@ header {
     color: #fff;
     text-align: center;
     background: #333;
+
+    @include bp(mob) {
+        padding: 15px 0;
+        font-size: 18px;
+    }
 }
 
 .footer-social {
@@ -493,6 +593,12 @@ header {
 
         &:first-child {
             margin-left: 0;
+        }
+    }
+
+    @include bp(mob) {
+        img {
+            height: 30px;
         }
     }
 }

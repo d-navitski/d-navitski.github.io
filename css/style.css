@@ -4,7 +4,6 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic&subset=latin,cyrillic);
 /* line 7, ../sass/normalize/base/_html.scss */
 html {
   font-family: sans-serif;
@@ -445,14 +444,14 @@ header:after, .skills-wrap:after {
   clear: both;
 }
 
-/* line 7, ../sass/_base.scss */
+/* line 5, ../sass/_base.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 11, ../sass/_base.scss */
+/* line 9, ../sass/_base.scss */
 html {
   font-family: Helvetiva, Arial;
   font-size: 12px;
@@ -460,27 +459,27 @@ html {
   color: #000;
 }
 
-/* line 20, ../sass/_base.scss */
+/* line 18, ../sass/_base.scss */
 input:focus, select:focus, textarea:focus, button:focus {
   outline: none;
 }
 
-/* line 25, ../sass/_base.scss */
+/* line 23, ../sass/_base.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 29, ../sass/_base.scss */
+/* line 27, ../sass/_base.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 33, ../sass/_base.scss */
+/* line 31, ../sass/_base.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 37, ../sass/_base.scss */
+/* line 35, ../sass/_base.scss */
 .no-hover {
   -ms-pointer-events: none;
   -moz-pointer-events: none;
@@ -498,6 +497,7 @@ header {
   position: relative;
   min-height: 100%;
   height: auto;
+  text-align: center;
   background: #fff;
   overflow: hidden;
   -moz-user-select: -moz-none;
@@ -506,7 +506,7 @@ header {
   user-select: none;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 23, ../sass/style.scss */
 .header-bg {
   position: absolute;
   top: 0;
@@ -517,25 +517,35 @@ header {
   z-index: 0;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 .avatar {
-  width: 100px;
-  height: 100px;
-  float: left;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  -webkit-transform: rotate(358deg);
-  z-index: 2;
+  display: none;
 }
-/* line 42, ../sass/style.scss */
-.avatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+@media (max-width: 767px) {
+  /* line 33, ../sass/style.scss */
+  .avatar {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 60px 0 0 0;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    -moz-transform: rotate(358deg);
+    -ms-transform: rotate(358deg);
+    -webkit-transform: rotate(358deg);
+    transform: rotate(358deg);
+    z-index: 2;
+  }
+  /* line 47, ../sass/style.scss */
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
 }
 
-/* line 49, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .header-text {
   position: absolute;
   top: 0;
@@ -545,80 +555,113 @@ header {
   padding: 2rem;
   z-index: 2;
 }
+@media (max-width: 767px) {
+  /* line 55, ../sass/style.scss */
+  .header-text {
+    position: relative;
+  }
+}
 
-/* line 59, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 .header-title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 700;
-  color: #000;
-  text-transform: uppercase;
+  display: none;
 }
-/* line 66, ../sass/style.scss */
-.header-title span {
-  font-weight: 400;
-  text-transform: none;
+@media (max-width: 767px) {
+  /* line 69, ../sass/style.scss */
+  .header-title {
+    display: block;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+  }
+  /* line 80, ../sass/style.scss */
+  .header-title span {
+    font-weight: 400;
+    text-transform: none;
+  }
 }
 
-/* line 72, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 .text-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* line 78, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 .vertiacal-text {
   position: absolute;
   top: 0;
   left: 1%;
+  display: none;
   height: 100%;
   width: 50%;
   margin: 0;
-  background: url(../img/vertical.png) 0 0 no-repeat;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  -webkit-background-size: contain;
-  background-size: contain;
   z-index: 50;
 }
+@media (min-width: 768px) {
+  /* line 93, ../sass/style.scss */
+  .vertiacal-text {
+    display: block;
+    background: url(../img/vertical.png) 0 0 no-repeat;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
+}
 
-/* line 90, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 .horizontal-text {
   position: absolute;
   left: 7%;
+  display: none;
   width: 40%;
   height: 100%;
   margin: 0;
-  font-family: 'Mohave-Bold';
-  background: url(../img/horizontal.png) 0 0 no-repeat;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  -webkit-background-size: contain;
-  background-size: contain;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* line 110, ../sass/style.scss */
+  .horizontal-text {
+    left: 15%;
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  /* line 110, ../sass/style.scss */
+  .horizontal-text {
+    display: block;
+    background: url(../img/horizontal.png) 0 0 no-repeat;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    -webkit-background-size: contain;
+    background-size: contain;
+  }
 }
 
-/* line 101, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .slogan {
   margin: 0;
   font-size: 12px;
   color: #000;
   font-style: italic;
 }
-/* line 107, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .slogan span {
   font-size: 20px;
   font-style: normal;
 }
 
-/* line 113, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .header-social {
   position: relative;
   float: right;
   font-size: 0;
   z-index: 2;
 }
-/* line 119, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .header-social a {
   display: inline-block;
   margin-left: 20px;
@@ -630,7 +673,7 @@ header {
   transition: color 0.2s ease-out;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 .down-arrow {
   position: absolute;
   bottom: 25px;
@@ -649,7 +692,7 @@ header {
   z-index: 500;
 }
 
-/* line 146, ../sass/style.scss */
+/* line 176, ../sass/style.scss */
 .skill-section {
   position: relative;
   min-height: 100%;
@@ -664,7 +707,7 @@ header {
   background: linear-gradient(to bottom, rgba(255, 226, 150, 0.35) 0%, rgba(157, 177, 116, 0.35) 44%, rgba(33, 159, 174, 0.35) 100%);
 }
 
-/* line 161, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 .skills-title {
   margin: 0;
   font-size: 36px;
@@ -674,7 +717,7 @@ header {
   text-align: center;
 }
 
-/* line 170, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
 .skills-wrap {
   position: absolute;
   top: 50%;
@@ -701,7 +744,7 @@ header {
   overflow: hidden;
 }
 
-/* line 184, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .skill {
   position: relative;
   display: inline-block;
@@ -741,7 +784,7 @@ header {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-/* line 222, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 .skill__text span {
   position: absolute;
   top: 50%;
@@ -765,12 +808,12 @@ header {
   background: #f9f9f9;
 }
 
-/* line 247, ../sass/style.scss */
+/* line 277, ../sass/style.scss */
 .skill-diagram {
   position: absolute;
 }
 
-/* line 251, ../sass/style.scss */
+/* line 281, ../sass/style.scss */
 .portfolio-section {
   position: relative;
   min-height: 100%;
@@ -779,7 +822,7 @@ header {
   overflow: hidden;
 }
 
-/* line 259, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
 .portfolio-title {
   padding: 30px 0;
   margin: 0;
@@ -788,8 +831,15 @@ header {
   text-align: center;
   background: #333;
 }
+@media (max-width: 767px) {
+  /* line 289, ../sass/style.scss */
+  .portfolio-title {
+    padding: 15px 0;
+    font-size: 18px;
+  }
+}
 
-/* line 268, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 .portfolio-item {
   position: relative;
   display: block;
@@ -800,7 +850,7 @@ header {
   overflow: hidden;
   z-index: 2;
 }
-/* line 278, ../sass/style.scss */
+/* line 313, ../sass/style.scss */
 .portfolio-item span {
   position: relative;
   display: block;
@@ -813,22 +863,24 @@ header {
   top: 50%;
   max-width: 90%;
   max-height: 90%;
-  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 /* line 10, ../sass/_mixins.scss */
 .portfolio-item__img--center {
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 /* line 10, ../sass/_mixins.scss */
 .portfolio-item--two-two {
   width: 50%;
 }
-/* line 305, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 .portfolio-item--two-two span {
   padding-bottom: 50%;
 }
@@ -856,7 +908,7 @@ header {
   font-size: 30px;
   line-height: 30px;
 }
-/* line 333, ../sass/style.scss */
+/* line 364, ../sass/style.scss */
 .portfolio-item__link a {
   display: inline-block;
   width: 50px;
@@ -873,7 +925,7 @@ header {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 346, ../sass/style.scss */
+/* line 377, ../sass/style.scss */
 .portfolio-item__link a:hover {
   color: #fff;
   background: #000;
@@ -887,8 +939,62 @@ header {
   line-height: 1em;
   text-transform: uppercase;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* line 303, ../sass/style.scss */
+  .portfolio-item {
+    width: 50%;
+  }
+  /* line 10, ../sass/_mixins.scss */
+  .portfolio-item--two-two {
+    width: 50%;
+  }
+  /* line 399, ../sass/style.scss */
+  .portfolio-item--two-two span {
+    padding-bottom: 100%;
+  }
+  /* line 3, ../sass/_mixins.scss */
+  .portfolio-item__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90%;
+    max-height: 90%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 767px) {
+  /* line 303, ../sass/style.scss */
+  .portfolio-item {
+    width: 100%;
+  }
+  /* line 10, ../sass/_mixins.scss */
+  .portfolio-item--two-two {
+    width: 100%;
+  }
+  /* line 421, ../sass/style.scss */
+  .portfolio-item--two-two span {
+    padding-bottom: 100%;
+  }
+  /* line 3, ../sass/_mixins.scss */
+  .portfolio-item__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90%;
+    max-height: 90%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
 
-/* line 363, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 .portfolio-overlay {
   position: absolute;
   width: 100%;
@@ -898,8 +1004,14 @@ header {
   background: #fff;
   z-index: 3;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* line 24, ../sass/_mixins.scss */
+  .has-touch .portfolio-overlay {
+    display: none !important;
+  }
+}
 
-/* line 373, ../sass/style.scss */
+/* line 454, ../sass/style.scss */
 .portfolio-overlay-inner {
   position: absolute;
   top: 50%;
@@ -912,13 +1024,13 @@ header {
   transform: translate(0, -50%);
 }
 
-/* line 382, ../sass/style.scss */
+/* line 463, ../sass/style.scss */
 .contacts-section {
   position: relative;
   width: 100%;
 }
 
-/* line 388, ../sass/style.scss */
+/* line 469, ../sass/style.scss */
 .contact-form {
   width: 700px;
   margin: 60px auto 30px;
@@ -987,13 +1099,29 @@ header {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 436, ../sass/style.scss */
+/* line 517, ../sass/style.scss */
 .contact-form__btn:hover {
   color: #fff;
   background: #000;
 }
+@media (max-width: 767px) {
+  /* line 469, ../sass/style.scss */
+  .contact-form {
+    width: 100%;
+    padding: 0 20px;
+    margin: 30px auto 30px;
+  }
+  /* line 3, ../sass/_mixins.scss */
+  .contact-form__input {
+    height: 35px;
+  }
+  /* line 3, ../sass/_mixins.scss */
+  .contact-form__textarea {
+    height: 125px;
+  }
+}
 
-/* line 443, ../sass/style.scss */
+/* line 538, ../sass/style.scss */
 .form-title {
   padding: 30px 0;
   margin: 0;
@@ -1002,15 +1130,22 @@ header {
   text-align: center;
   background: #333;
 }
+@media (max-width: 767px) {
+  /* line 538, ../sass/style.scss */
+  .form-title {
+    padding: 15px 0;
+    font-size: 18px;
+  }
+}
 
-/* line 452, ../sass/style.scss */
+/* line 552, ../sass/style.scss */
 .footer-social {
   width: 100%;
   margin-bottom: 60px;
   font-size: 0;
   text-align: center;
 }
-/* line 458, ../sass/style.scss */
+/* line 558, ../sass/style.scss */
 .footer-social a {
   display: inline-block;
   margin-left: 20px;
@@ -1021,40 +1156,46 @@ header {
   -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
 }
-/* line 465, ../sass/style.scss */
+/* line 565, ../sass/style.scss */
 .footer-social a:first-child {
   margin-left: 0;
 }
 
-/* line 471, ../sass/style.scss */
+/* line 571, ../sass/style.scss */
 .fb:hover {
   color: #3b5998;
 }
 
-/* line 475, ../sass/style.scss */
+/* line 575, ../sass/style.scss */
 .skype:hover {
   color: #00aff0;
 }
 
-/* line 479, ../sass/style.scss */
+/* line 579, ../sass/style.scss */
 .github:hover {
   color: #4183c4;
 }
 
-/* line 483, ../sass/style.scss */
+/* line 583, ../sass/style.scss */
 .technologies {
   padding: 20px 0;
   font-size: 0;
   text-align: center;
   background: #333;
 }
-/* line 489, ../sass/style.scss */
+/* line 589, ../sass/style.scss */
 .technologies img {
   display: inline-block;
   margin-left: 20px;
   vertical-align: middle;
 }
-/* line 494, ../sass/style.scss */
+/* line 594, ../sass/style.scss */
 .technologies img:first-child {
   margin-left: 0;
+}
+@media (max-width: 767px) {
+  /* line 600, ../sass/style.scss */
+  .technologies img {
+    height: 30px;
+  }
 }

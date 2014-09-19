@@ -7,12 +7,21 @@ $(function() {
     var tl = new TimelineLite();
     var $verticalText = $('.vertiacal-text');
     var $horizontalText = $('.horizontal-text');
+    var $avatar = $('.avatar');
+    var $headerTitle = $('.header-title');
     var $headerHeight = $('.header').outerHeight();
     var $headerWidth = $('.header').outerWidth();
     var $portfolio = $('#portfolio');
     var $portfolioItem = $('.portfolio-item');
+    var hasTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 1));
     var lastScrollTop = 0;
     var timer;
+
+    if (hasTouch) {
+        $body.addClass('has-touch');
+    } else {
+        $body.addClass('no-touch');
+    }
 
     /*var drawDiagram = function(el, container, color, start, end) {
         var canvas = document.getElementById(el);
@@ -257,11 +266,11 @@ $(function() {
 
 
     tl
-        .from($horizontalText, 1, {
+        .from([$horizontalText, $headerTitle], 1, {
             x: -3 * $headerWidth,
             force3D: true
         })
-        .from($verticalText, 0.5, {
+        .from([$verticalText, $avatar], 0.5, {
             y: -$headerHeight,
             force3D: true,
             onComplete: function() {

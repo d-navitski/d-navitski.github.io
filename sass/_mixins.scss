@@ -95,3 +95,64 @@
         @content;
     }
 }
+
+@mixin bp($point) {
+    $desc-xl: "(min-width: 1440px)";
+    $desc: "(min-width: 1024px)";
+    $tab: "(min-width: 768px) and (max-width: 1024px)";
+    $tab-min: "(min-width: 768px)";
+    $mob: "(max-width: 767px)";
+    $mob-sm: "(max-width: 600px)";
+    $mob-sx: "(max-width: 480px)";
+
+    @if $point == desc-xl {
+
+        @media #{$desc-xl} {
+            @content;
+        }
+    }
+
+    @if $point == desc {
+
+        @media #{$desc} {
+            @content;
+        }
+    }
+
+    @if $point == tab {
+
+        @media #{$tab} {
+            @content;
+        }
+    }
+
+    @if $point == tab-min {
+
+        @media #{$tab-min} {
+            @content;
+        }
+    }
+
+    
+
+    @else if $point == mob {
+
+        @media #{$mob} {
+            @content;
+        }
+    }
+
+    @else if $point == mob-sm {
+
+        @media #{$mob-sm} {
+            @content;
+        }
+    }
+
+    @else if $point == mob-sx {
+
+        @media #{$mob-sx} {
+            @content;
+        }
+    }
+}
