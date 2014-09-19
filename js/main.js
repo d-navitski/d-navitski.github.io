@@ -7,7 +7,7 @@ if (window.addEventListener) {
             $loader.hide();
             $body.removeClass('overflow');
             init();
-        }, 300);
+        }, 1000);
     }, false);
 } else if (window.attachEvent) {
     window.attachEvent('onload', function() {
@@ -15,7 +15,7 @@ if (window.addEventListener) {
             $loader.hide();
             $body.removeClass('overflow');
             init();
-        }, 300);
+        }, 1000);
     });
 }
 
