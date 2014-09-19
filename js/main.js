@@ -209,62 +209,65 @@ function init() {
             var st = $(this).scrollTop();
             var windowTop = $(window).scrollTop();
             var portfolioTop = $portfolio.offset().top;
-            TweenLite.killTweensOf($portfolioItem);
-            $portfolioItem.addClass('no-hover');
 
-            if (windowTop >= portfolioTop) {
-                $portfolioItem.each(function(index, el) {
-                    TweenLite.to(el, 0.5, {
-                        alpha: 1,
-                        scale: 1,
-                        delay: 0.05 * index,
-                        force3D: true,
-                        ease: new Ease(BezierEasing(0.145, 0.055, 0.050, 0.870)),
-                        onComplete: function() {
-                            $portfolioItem.removeClass('no-hover');
-                        }
-                    });
-                });
-            }
+            if ($(window).outerWidth() >= 768 && !hasTouch) {
+                TweenLite.killTweensOf($portfolioItem);
+                $portfolioItem.addClass('no-hover');
 
-            if (st > lastScrollTop) {
-                if (isScrollig || !$animate) {
-                    return;
-                }
-                setTimeout(function() {
+                if (windowTop >= portfolioTop) {
                     $portfolioItem.each(function(index, el) {
-                        var $this = $(this);
-                        TweenLite.fromTo($this, 0.85, {
-                            y: -15,
-                            force3D: true
-                        }, {
-                            y: 0,
-                            delay: 0.025 * index,
-                            force3D: true
+                        TweenLite.to(el, 0.5, {
+                            alpha: 1,
+                            scale: 1,
+                            delay: 0.05 * index,
+                            force3D: true,
+                            ease: new Ease(BezierEasing(0.145, 0.055, 0.050, 0.870)),
+                            onComplete: function() {
+                                $portfolioItem.removeClass('no-hover');
+                            }
                         });
                     });
-                }, 10);
-
-            } else {
-                if (isScrollig || !$animate) {
-                    return;
                 }
-                setTimeout(function() {
-                    $portfolioItem.each(function(index, el) {
-                        var $this = $(this);
-                        TweenLite.fromTo($this, 0.85, {
-                            y: 15,
-                            force3D: true
-                        }, {
-                            y: 0,
-                            delay: 0.025 * index,
-                            force3D: true
-                        });
-                    });
-                }, 10);
 
+                if (st > lastScrollTop) {
+                    if (isScrollig || !$animate) {
+                        return;
+                    }
+                    setTimeout(function() {
+                        $portfolioItem.each(function(index, el) {
+                            var $this = $(this);
+                            TweenLite.fromTo($this, 0.85, {
+                                y: -15,
+                                force3D: true
+                            }, {
+                                y: 0,
+                                delay: 0.025 * index,
+                                force3D: true
+                            });
+                        });
+                    }, 10);
+
+                } else {
+                    if (isScrollig || !$animate) {
+                        return;
+                    }
+                    setTimeout(function() {
+                        $portfolioItem.each(function(index, el) {
+                            var $this = $(this);
+                            TweenLite.fromTo($this, 0.85, {
+                                y: 15,
+                                force3D: true
+                            }, {
+                                y: 0,
+                                delay: 0.025 * index,
+                                force3D: true
+                            });
+                        });
+                    }, 10);
+
+                }
+                lastScrollTop = st;
             }
-            lastScrollTop = st;
 
             clearTimeout(timer);
             timer = setTimeout(function() {
