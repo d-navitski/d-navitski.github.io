@@ -210,25 +210,24 @@ function init() {
             var windowTop = $(window).scrollTop();
             var portfolioTop = $portfolio.offset().top;
 
-            if ($(window).outerWidth() >= 768 && !hasTouch) {
-                TweenLite.killTweensOf($portfolioItem);
-                $portfolioItem.addClass('no-hover');
-
-                if (windowTop >= portfolioTop) {
-                    $portfolioItem.each(function(index, el) {
-                        TweenLite.to(el, 0.5, {
-                            alpha: 1,
-                            scale: 1,
-                            delay: 0.05 * index,
-                            force3D: true,
-                            ease: new Ease(BezierEasing(0.145, 0.055, 0.050, 0.870)),
-                            onComplete: function() {
-                                $portfolioItem.removeClass('no-hover');
-                            }
-                        });
+            TweenLite.killTweensOf($portfolioItem);
+            $portfolioItem.addClass('no-hover');
+            if (windowTop >= portfolioTop) {
+                $portfolioItem.each(function(index, el) {
+                    TweenLite.to(el, 0.5, {
+                        alpha: 1,
+                        scale: 1,
+                        delay: 0.05 * index,
+                        force3D: true,
+                        ease: new Ease(BezierEasing(0.145, 0.055, 0.050, 0.870)),
+                        onComplete: function() {
+                            $portfolioItem.removeClass('no-hover');
+                        }
                     });
-                }
+                });
+            }
 
+            if ($(window).outerWidth() >= 768 && !hasTouch) {
                 if (st > lastScrollTop) {
                     if (isScrollig || !$animate) {
                         return;
