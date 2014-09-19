@@ -4,9 +4,33 @@
 @import "variables";
 @import "mixins";
 
-
-html, body {
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background: #333;
+    z-index: 50000;
+
+    @include s(hidden) {
+        display: none;
+    }
+}
+
+.center-loader {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    @include transform(translate(0, -50%));
+}
+
+.loader-header {
+    margin: 100px 0 0 0;
+    font-size: 48px;
+    color: #fff;
 }
 
 header {
@@ -344,6 +368,7 @@ header {
         margin: 0;
         font-size: 24px;
         line-height: 1em;
+        font-weight: 700;
     }
 
     @include e(text) {
@@ -388,6 +413,20 @@ header {
         font-size: 14px;
         line-height: 1em;
         text-transform: uppercase;
+    }
+
+    @include bp(desc-xl) {
+        @include e(title) {
+            font-size: 36px;
+        }
+
+        @include e(text) {
+            font-size: 18px;
+        }
+
+        @include e(tags) {
+            font-size: 18px;
+        }
     }
 
     @include bp(tab) {

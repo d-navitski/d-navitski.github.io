@@ -13,11 +13,18 @@ html {
     color: $text-c;
 }
 
+html, body {
+    height: 100%;
+}
 
 input, select, textarea, button {
     &:focus {
         outline: none;
     }
+}
+
+.overflow {
+    overflow: hidden;
 }
 
 .text-left {
