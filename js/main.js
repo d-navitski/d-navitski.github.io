@@ -234,7 +234,7 @@ function init() {
 
             TweenLite.killTweensOf($portfolioItem);
             $portfolioItem.addClass('no-hover');
-            if (windowTop >= portfolioTop) {
+            if (windowTop * 2 >= portfolioTop) {
                 $portfolioItem.each(function(index, el) {
                     TweenLite.to(el, 0.5, {
                         alpha: 1,
@@ -322,7 +322,7 @@ function init() {
                 onComplete: function() {
                     setTimeout(function() {
                         $animate = true;
-                    }, 300);
+                    }, 1100);
                 }
             })
             .to($arrowDown, 1, {
@@ -386,7 +386,7 @@ function init() {
             var $targetPos = $('#' + $target).offset().top;
 
             isScrollig = true;
-            TweenLite.to(window, 1, {
+            TweenLite.to(window, 0.7, {
                 scrollTo: $targetPos,
                 ease: Cubic.easeInOut,
                 force3D: 'auto',

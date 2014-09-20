@@ -40,7 +40,7 @@
     color: #fff;
 }
 
-header {
+.header {
     @extend %clr;
     position: relative;
     min-height: 100%;
@@ -49,6 +49,14 @@ header {
     background: #fff;
     overflow: hidden;
     @include user-select(none);
+}
+
+.header-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .header-bg {
@@ -510,6 +518,7 @@ header {
 .contacts-section {
     position: relative;
     width: 100%;
+    background: #fff;
 }
 
 
