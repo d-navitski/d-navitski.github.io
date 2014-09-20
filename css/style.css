@@ -875,10 +875,11 @@ input:focus, select:focus, textarea:focus, button:focus {
   min-height: 100%;
   height: auto;
   background: #fff;
+  z-index: 10;
   overflow: hidden;
 }
 
-/* line 328, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 .portfolio-title {
   padding: 30px 0;
   margin: 0;
@@ -889,14 +890,14 @@ input:focus, select:focus, textarea:focus, button:focus {
   background: #333;
 }
 @media (max-width: 767px) {
-  /* line 328, ../sass/style.scss */
+  /* line 329, ../sass/style.scss */
   .portfolio-title {
     padding: 15px 0;
     font-size: 18px;
   }
 }
 
-/* line 343, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 .portfolio-item {
   position: relative;
   display: block;
@@ -907,7 +908,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   overflow: hidden;
   z-index: 2;
 }
-/* line 353, ../sass/style.scss */
+/* line 354, ../sass/style.scss */
 .portfolio-item span {
   position: relative;
   display: block;
@@ -937,7 +938,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 .portfolio-item--two-two {
   width: 50%;
 }
-/* line 376, ../sass/style.scss */
+/* line 377, ../sass/style.scss */
 .portfolio-item--two-two span {
   padding-bottom: 50%;
 }
@@ -966,7 +967,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   font-size: 30px;
   line-height: 30px;
 }
-/* line 405, ../sass/style.scss */
+/* line 406, ../sass/style.scss */
 .portfolio-item__link a {
   display: inline-block;
   width: 50px;
@@ -983,7 +984,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 418, ../sass/style.scss */
+/* line 419, ../sass/style.scss */
 .portfolio-item__link a:hover {
   color: #fff;
   background: #000;
@@ -1012,7 +1013,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* line 343, ../sass/style.scss */
+  /* line 344, ../sass/style.scss */
   .portfolio-item {
     width: 50%;
   }
@@ -1020,7 +1021,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   .portfolio-item--two-two {
     width: 50%;
   }
-  /* line 454, ../sass/style.scss */
+  /* line 455, ../sass/style.scss */
   .portfolio-item--two-two span {
     padding-bottom: 100%;
   }
@@ -1039,7 +1040,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   }
 }
 @media (max-width: 767px) {
-  /* line 343, ../sass/style.scss */
+  /* line 344, ../sass/style.scss */
   .portfolio-item {
     width: 100%;
   }
@@ -1047,7 +1048,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   .portfolio-item--two-two {
     width: 100%;
   }
-  /* line 476, ../sass/style.scss */
+  /* line 477, ../sass/style.scss */
   .portfolio-item--two-two span {
     padding-bottom: 100%;
   }
@@ -1066,7 +1067,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   }
 }
 
-/* line 493, ../sass/style.scss */
+/* line 494, ../sass/style.scss */
 .portfolio-overlay {
   position: absolute;
   width: 100%;
@@ -1083,7 +1084,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   }
 }
 
-/* line 509, ../sass/style.scss */
+/* line 510, ../sass/style.scss */
 .portfolio-overlay-inner {
   position: absolute;
   top: 50%;
@@ -1096,14 +1097,15 @@ input:focus, select:focus, textarea:focus, button:focus {
   transform: translate(0, -50%);
 }
 
-/* line 518, ../sass/style.scss */
+/* line 519, ../sass/style.scss */
 .contacts-section {
   position: relative;
   width: 100%;
   background: #fff;
+  z-index: 10;
 }
 
-/* line 525, ../sass/style.scss */
+/* line 527, ../sass/style.scss */
 .contact-form {
   width: 700px;
   margin: 60px auto 30px;
@@ -1172,13 +1174,13 @@ input:focus, select:focus, textarea:focus, button:focus {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 573, ../sass/style.scss */
+/* line 575, ../sass/style.scss */
 .contact-form__btn:hover {
   color: #fff;
   background: #000;
 }
 @media (max-width: 767px) {
-  /* line 525, ../sass/style.scss */
+  /* line 527, ../sass/style.scss */
   .contact-form {
     width: 100%;
     padding: 0 20px;
@@ -1194,7 +1196,7 @@ input:focus, select:focus, textarea:focus, button:focus {
   }
 }
 
-/* line 594, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 .form-title {
   padding: 30px 0;
   margin: 0;
@@ -1205,21 +1207,21 @@ input:focus, select:focus, textarea:focus, button:focus {
   background: #333;
 }
 @media (max-width: 767px) {
-  /* line 594, ../sass/style.scss */
+  /* line 596, ../sass/style.scss */
   .form-title {
     padding: 15px 0;
     font-size: 18px;
   }
 }
 
-/* line 609, ../sass/style.scss */
+/* line 611, ../sass/style.scss */
 .footer-social {
   width: 100%;
   margin-bottom: 60px;
   font-size: 0;
   text-align: center;
 }
-/* line 615, ../sass/style.scss */
+/* line 617, ../sass/style.scss */
 .footer-social a {
   display: inline-block;
   margin-left: 20px;
@@ -1230,45 +1232,45 @@ input:focus, select:focus, textarea:focus, button:focus {
   -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
 }
-/* line 622, ../sass/style.scss */
+/* line 624, ../sass/style.scss */
 .footer-social a:first-child {
   margin-left: 0;
 }
 
-/* line 628, ../sass/style.scss */
+/* line 630, ../sass/style.scss */
 .fb:hover {
   color: #3b5998;
 }
 
-/* line 632, ../sass/style.scss */
+/* line 634, ../sass/style.scss */
 .skype:hover {
   color: #00aff0;
 }
 
-/* line 636, ../sass/style.scss */
+/* line 638, ../sass/style.scss */
 .github:hover {
   color: #4183c4;
 }
 
-/* line 640, ../sass/style.scss */
+/* line 642, ../sass/style.scss */
 .technologies {
   padding: 20px 0;
   font-size: 0;
   text-align: center;
   background: #333;
 }
-/* line 646, ../sass/style.scss */
+/* line 648, ../sass/style.scss */
 .technologies img {
   display: inline-block;
   margin-left: 20px;
   vertical-align: middle;
 }
-/* line 651, ../sass/style.scss */
+/* line 653, ../sass/style.scss */
 .technologies img:first-child {
   margin-left: 0;
 }
 @media (max-width: 767px) {
-  /* line 657, ../sass/style.scss */
+  /* line 659, ../sass/style.scss */
   .technologies img {
     height: 30px;
   }

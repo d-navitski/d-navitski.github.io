@@ -322,6 +322,7 @@
     min-height: 100%;
     height: auto;
     background: #fff;
+    z-index: 10;
     overflow: hidden;
 }
 
@@ -519,6 +520,7 @@
     position: relative;
     width: 100%;
     background: #fff;
+    z-index: 10;
 }
 
 
