@@ -17,19 +17,24 @@
 <body class="overflow">
     <div class="loader">
         <div class="center-loader">
-            <img src="img/loader-new.gif" alt="">
-            <h2 class="loader-header">LOADING...</h2>
+            <?xml version="1.0" standalone="no"?>
+            <!-- Generator: SVG Circus (http://svgcircus.com) -->
+            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+            <svg id="SVG-Circus-6a9088aa-0c20-9e3b-54bc-6b5ababa7468" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet"><circle id="actor_1" x="50" y="75" r="5" opacity="1" fill="rgba(255,255,255,1)" fill-opacity="1" stroke="#fff" stroke-width="1" stroke-opacity="1" stroke-dasharray=""></circle><circle id="actor_2" x="50" y="75" r="5" opacity="1" fill="rgba(255,255,255,1)" fill-opacity="1" stroke="#fff" stroke-width="1" stroke-opacity="1" stroke-dasharray=""></circle><circle id="actor_3" x="50" y="75" r="5" opacity="1" fill="#fff" fill-opacity="1" stroke="#fff" stroke-width="1" stroke-opacity="1" stroke-dasharray=""></circle><circle id="actor_4" x="50" y="75" r="5" opacity="1" fill="#fff" fill-opacity="1" stroke="#fff" stroke-width="1" stroke-opacity="1" stroke-dasharray=""></circle>
+                <script type="text/ecmascript"><![CDATA[(function(){var actors={};actors.actor_1={node:document.getElementById("SVG-Circus-6a9088aa-0c20-9e3b-54bc-6b5ababa7468").getElementById("actor_1"),type:"circle",cx:50,cy:75,dx:10,dy:15,opacity:1};actors.actor_2={node:document.getElementById("SVG-Circus-6a9088aa-0c20-9e3b-54bc-6b5ababa7468").getElementById("actor_2"),type:"circle",cx:50,cy:75,dx:10,dy:15,opacity:1};actors.actor_3={node:document.getElementById("SVG-Circus-6a9088aa-0c20-9e3b-54bc-6b5ababa7468").getElementById("actor_3"),type:"circle",cx:50,cy:75,dx:10,dy:15,opacity:1};actors.actor_4={node:document.getElementById("SVG-Circus-6a9088aa-0c20-9e3b-54bc-6b5ababa7468").getElementById("actor_4"),type:"circle",cx:50,cy:75,dx:10,dy:15,opacity:1};var tricks={};tricks.trick_1=(function(t,e){e=(function(n){return.5>n?2*n*n:-1+(4-2*n)*n})(e)%1,e=e*1%1,e=0>e?1+e:e;var _=t.node,c=t.cx-25*Math.cos(-90*Math.PI/180),a=t.cy+25*Math.sin(-90*Math.PI/180);switch(c+=25*Math.cos((-90-360*e*1)*Math.PI/180),a-=25*Math.sin((-90-360*e*1)*Math.PI/180),t.type){case"circle":_.setAttribute("cx",c),_.setAttribute("cy",a);break;case"square":_.setAttribute("x",c-t.dx/2),_.setAttribute("y",a-t.dx/2)}});var scenarios={};scenarios.scenario_1={actors: [actors.actor_1,actors.actor_2,actors.actor_3,actors.actor_4],tricks: [{trick: tricks.trick_1,start:0,end:1}],startAfter:0,duration:2000,actorDelay:500,repeat:0,repeatDelay:0};var _reqAnimFrame=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.oRequestAnimationFrame,fnTick=function(r){for(var a in scenarios)for(var e=scenarios[a],t=r-e.startAfter,i=0,n=e.actors.length;n>i;i++){var o=0;if(t>=0){var m=e.duration+e.repeatDelay;e.repeat>0&&t>m*e.repeat&&(o=1),o+=t%m/e.duration}if(e.actors[i].node)for(var s=0,c=e.tricks.length;c>s;s++){var f=e.tricks[s],w=(o-f.start)*(1/(f.end-f.start));f.trick(e.actors[i],Math.max(0,Math.min(1,w)))}t-=e.actorDelay}_reqAnimFrame(fnTick)};_reqAnimFrame(fnTick);})()]]>
+                </script>
+            </svg>
         </div>
     </div>
     <header class="header">
-    <picture>
-        <!--[if IE 9]><video style="display: none;"><![endif]-->
-        <source srcset="img/img-2-2.jpg" media="(min-width: 1440px)">
-        <source srcset="img/img-2-2-desc.jpg" media="(min-width: 1280px)">
-        <source srcset="img/img-2-2-tab.jpg" media="(min-width: 768px)">
-        <!--[if IE 9]></video><![endif]-->
-        <img class="header-bg" srcset="img/img-2-2-mob.jpg" alt="">
-    </picture>
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="img/img-2-2.jpg" media="(min-width: 1440px)">
+            <source srcset="img/img-2-2-desc.jpg" media="(min-width: 1280px)">
+            <source srcset="img/img-2-2-tab.jpg" media="(min-width: 768px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img class="header-bg" srcset="img/img-2-2-mob.jpg" alt="">
+        </picture>
         <div class="avatar">
             <img src="img/img-1.jpg" alt="">
         </div>

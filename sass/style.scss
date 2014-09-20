@@ -10,8 +10,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #333;
+    background: #9A261E;
     z-index: 50000;
+
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
     @include s(hidden) {
         display: none;
@@ -21,10 +27,11 @@
 .center-loader {
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    width: 256px;
+    height: 256px;
     text-align: center;
-    @include transform(translate(0, -50%));
+    @include transform(translate(-50%, -50%));
 }
 
 .loader-header {

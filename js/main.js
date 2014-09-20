@@ -3,16 +3,38 @@ var $body = $('html, body');
 
 if (window.addEventListener) {
     window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            $loader.hide();
-            $body.removeClass('overflow');
-            init();
-        }, 1000);
+        var $verticalText = $('.vertiacal-text');
+        var $horizontalText = $('.horizontal-text');
+        var $avatar = $('.avatar');
+        var $headerTitle = $('.header-title');
+
+        TweenLite.set([$horizontalText, $headerTitle], {
+            x: -$(window).width(),
+            force3D: true
+        });
+
+        TweenLite.set([$verticalText, $avatar], {
+            y: -$(window).height(),
+            force3D: true,
+        });
+
+        TweenLite.to($loader, 0.5, {
+            alpha: 0,
+            force3D: true,
+            delay: 1,
+            onComplete: function() {
+                setTimeout(function() {
+                    $body.removeClass('overflow');
+                    init();
+                    $loader.hide();
+                }, 100);
+            }
+        });
     }, false);
 } else if (window.attachEvent) {
     window.attachEvent('onload', function() {
         setTimeout(function() {
-            $loader.hide();
+            $loader.fadeOut();
             $body.removeClass('overflow');
             init();
         }, 1000);
@@ -290,17 +312,17 @@ function init() {
 
 
         tl
-            .from([$horizontalText, $headerTitle], 1, {
-                x: -3 * $headerWidth,
+            .to([$horizontalText, $headerTitle], 0.5, {
+                x: 0,
                 force3D: true
             })
-            .from([$verticalText, $avatar], 0.5, {
-                y: -$headerHeight,
+            .to([$verticalText, $avatar], 0.5, {
+                y: 0,
                 force3D: true,
                 onComplete: function() {
                     setTimeout(function() {
                         $animate = true;
-                    }, 1100);
+                    }, 300);
                 }
             })
             .to($arrowDown, 1, {
