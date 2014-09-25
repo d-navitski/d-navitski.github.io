@@ -1,5 +1,6 @@
 Thumbs.db
 ehthumbs.db
+/node_modules
 .DS_Store
 .codekit.cache
 .sass-cache
