@@ -67,6 +67,11 @@
     height: 120%;
     opacity: 0.55;
     z-index: 0;
+
+    @include bp(mob) {
+        left: 50%;
+        @include transform(translate(-50%, 0));
+    }
 }
 
 .avatar {
