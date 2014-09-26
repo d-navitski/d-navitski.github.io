@@ -226,7 +226,6 @@ function init() {
             });
         });
 
-
         $(window).on('scroll', function(event) {
             var st = $(this).scrollTop();
             var windowTop = $(window).scrollTop();
@@ -354,7 +353,7 @@ function init() {
                     });
 
                     TweenLite.to($text, 0.7, {
-                        alpha: -Math.abs(xx / 500) + 0.75,
+                        alpha: -Math.abs(xx / 500) + 0.7,
                         force3D: true
                     });
                 }, 10);

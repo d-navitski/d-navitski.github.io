@@ -156,7 +156,7 @@
     
 
     @include bp(tab) {
-        left: 15%;
+        left: 10%;
         width: 70%;
     }
 
@@ -200,7 +200,7 @@
     left: 50%;
     height: 84px;
     opacity: 0;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAARtwAAEbcBmmNTKwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHiSURBVHic7dpLbsJAEATQ6iytSLmJt/xyADgvi2TDBiX3CYh9Z5EB2cQf7JmeskWXZEWAP1VPygpEVfHMeWEXYMcB2AXYcQB2AXYcgF2AHQdgF2DHAdgF2HEAdgF2HIBdgJ1GABEpRKTMXcYqIlKKSNH02T+AcOIewFFEFtblrBM2HAHsGxFU9XYAKAAcAGg4fgAsqufM6QCwCBuuew4Aito5dxeUdxfMFqFh/HVL2QpQufA0Z4SW8aemDV03mCXCkPGtAHNFGDq+E2BuCGPG9wKEGy+njtAxftl77YMPmCxCzPiHAaaKEDt+EMDUEFKMHwwwFYRU40cBhAIrFkLH+NWo+0UUyY6QenwUQAXhnAOhZfw5Znw0QC4Eq/FJAKwRLMcnA7BCsB6fFCAUXqdC6Bi/Tto55c1SIeQabwIQi5BzvBnAWITc400BhiIwxpsDhGGbPoSO8RvzftYP6ENgjldVSChoHhHZAPgE8Fp5+xT+vlXeuwDYqup3ll65AIBWhGqyjgcyfzkahm3xN/Q+2ccDhG+Hw8Ad6ggXALvc44HM/wK1B4u8A/gIL3eq+kXpwQIAbghgjQfIAFOI/0KEXYAdB2AXYMcB2AXYcQB2AXYcgF2AHQdgF2DHAdgF2Hl6gF+e4ETEXYy48gAAAABJRU5ErkJggg==) center bottom no-repeat;
+    background: url(../img/img-3.png) center bottom no-repeat;
     font-size: 16px;
     color: #000;
     font-weight: 700;
@@ -231,7 +231,7 @@
     margin: 0;
     font-size: 36px;
     font-weight: 700;
-    color: #000;
+    color: #333;
     text-transform: uppercase;
     text-align: center;
 }
