@@ -52,6 +52,9 @@ function init() {
         var $verticalText = $('.vertiacal-text');
         var $horizontalText = $('.horizontal-text');
         var $avatar = $('.avatar');
+        var $header = $('.header');
+        var $bg = $header.find('.header-bg');
+        var $text = $('.vertiacal-text, .horizontal-text');
         var $headerTitle = $('.header-title');
         var $headerHeight = $('.header').outerHeight();
         var $headerWidth = $('.header').outerWidth();
@@ -334,10 +337,7 @@ function init() {
             });
 
 
-        $('.header').mousemove(function(e) {
-            var $header = $(this);
-            var $bg = $header.find('.header-bg');
-            var $text = $('.vertiacal-text, .horizontal-text');
+        $header.mousemove(function(e) {
             var xx = -Math.round((e.pageX + this.offsetLeft) / 5);
             var yy = -Math.round((e.pageY + this.offsetTop) / 5);
 
